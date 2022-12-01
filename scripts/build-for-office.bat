@@ -60,7 +60,10 @@ cmake --build .\.build\Win32_x64_Chakra_D3D11\Release --config RelWithDebInfo --
 
 
 
-if exist .\.office\lib\x64 (rmdir /s /q .\.office\lib\x64)
+if exist .\.office\include\ (rmdir /s /q .\.office\include)
+robocopy .\.install\x64\Debug\include .\.office\include /E
+
+if exist .\.office\lib\x64\ (rmdir /s /q .\.office\lib\x64)
 robocopy .\.install\x64\Debug\lib .\.office\lib\x64\Debug /E
 robocopy .\.install\x64\Release\lib .\.office\lib\x64\Release /E
 
